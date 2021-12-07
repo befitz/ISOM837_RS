@@ -20,7 +20,6 @@ def returing_cust():
     rs_2021 = rs_2021['AccountId'].isin(bought_in2019)
     return rs_2019, rs_2021
 
-rs_2019,rs_2021 = returing_cust()
 
 def map_categoricals(df):
     """Function to map categorial variables to the dataframe"""
@@ -55,3 +54,10 @@ def map_categoricals(df):
     df['game_hour'] = df['game_hour'].astype(int)
 
     return df
+
+def train_test():
+    rs_2019,rs_2021 = returing_cust()
+    train = map_categoricals(rs_2019)
+    test = map_categoricals(rs_2021)
+
+    return train, test
