@@ -10,6 +10,10 @@ import warnings
 
 from sklearn import tree
 
+from variable_creation import train_test
+
+train, test = train_test()
+
 def decision_tree(df):
     X = df[['price_per_ticket', 'paid_full_price', 'paid_online',
            'Regular_Ticket', 'age', 'est_income', 'Male', 'married', 'fam_w_kids',
@@ -45,3 +49,5 @@ def decision_tree(df):
            'Monday', 'low_scale_seat', 'med_scale_seat', 'high_scale_seat']
     text_representation = tree.export_text(tree_test, feature_names = fn, show_weights=True)
     print(text_representation)
+
+decision_tree(train)
