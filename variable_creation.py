@@ -56,8 +56,8 @@ def map_categoricals(df):
     return df
 
 def train_test():
-    rs_2019,rs_2021 = returing_cust()
-    train = map_categoricals(rs_2019)
-    test = map_categoricals(rs_2021)
+    df_2019, df_2021 = returing_cust()
+    train = map_categoricals(df_2019)
+    test = map_categoricals(df_2021)
 
     return train, test
